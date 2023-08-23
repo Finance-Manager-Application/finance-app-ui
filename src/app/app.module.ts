@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { ExpenseTrackerComponent } from './expense-tracker/expense-tracker.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { AppRoutingModule } from './app-routing.module';
+import { LoginModule } from './features/login/login.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { LoginPageComponent } from './login-page/login-page.component';
     LoginPageComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]
