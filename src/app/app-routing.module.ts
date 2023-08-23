@@ -4,11 +4,16 @@ import { CommonModule } from '@angular/common';
 
 //MODULES
 import { LoginModule } from './features/login/login.module';
+import { ExpenseTrackerModule } from './features/expense-tracker/expense-tracker.module';
 
 const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./features/login/login.module').then((m) => m.LoginModule)
+  },
+  {
+    path: 'expense-tracker',
+    loadChildren: () => import('./features/expense-tracker/expense-tracker.module').then((m) => m.ExpenseTrackerModule)
   },
   {
     path: '**',
