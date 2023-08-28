@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-finance-tracker',
   templateUrl: './finance-tracker.component.html',
-  styleUrls: ['./finance-tracker.component.css']
+  styleUrls: ['./finance-tracker.component.scss']
 })
 export class FinanceTrackerComponent implements OnInit {
 
@@ -12,4 +12,9 @@ export class FinanceTrackerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  sidebarExpanded = true;
+
+  toggleSidebar() {
+    this.sidebarExpanded = !this.sidebarExpanded;
+  }
 }

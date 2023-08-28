@@ -1,0 +1,503 @@
+
+// HOME SECTION
+
+.home-section nav {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: calc(100% - 280px);
+    left: 280px;
+    z-index: 100;
+    padding: 0 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+}
+
+.home-section {
+    position: relative;
+    background: #ffffff;
+    min-height: 100vh;
+    width: calc(100% - 280px);
+    left: 280px;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active~.home-section nav {
+    left: 60px;
+    width: calc(100% - 60px);
+}
+
+.home-section nav .sidebar-button {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+nav .sidebar-button i {
+    font-size: 35px;
+    margin-right: 10px;
+}
+
+.home-section nav .profile-details {
+    display: flex;
+    align-items: center;
+    background: #F5F6FA;
+    border: 2px solid #EFEEF1;
+    border-radius: 6px;
+    height: 50px;
+    min-width: 190px;
+    padding: 0 2px 0 2px;
+}
+
+nav .profile-details img {
+    height: 40px;
+    width: 40px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+nav .profile-details .admin_name {
+    font-size: 15px;
+    font-family: 'Inter-Regular';
+    color: #333;
+    margin: 0 10px;
+    white-space: nowrap;
+}
+
+nav .profile-details i {
+    font-size: 25px;
+    color: #333;
+}
+
+.home-section .home-content {
+    position: relative;
+    padding-top: 104px;
+}
+
+.page-title {
+    font-weight: bold;
+    font-size: 30px;
+    font-family: 'Inter-Bold';
+    margin-left: 30px;
+    margin-bottom: 10px;
+    color: #37352f;
+}
+
+.sub-title {
+    font-family: 'Inter-Medium';
+    font-weight: normal;
+    font-size: 26px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 10px;
+    color: #37352f;
+}
+
+.content-title {
+    font-family: 'Inter-Medium';
+    font-size: 22px;
+    margin-left: 25px;
+    margin-bottom: 10px;
+    color: #37352f;
+}
+
+/* Style for the scrollable container */
+.scrollable-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 10px; /* Add some bottom padding for better UI */
+}
+
+/* Make each date entry and income entry inline */
+.date {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px; /* Add spacing between date entries */
+    min-width: 300px; /* Set a minimum width for each entry */
+}
+
+
+// BOX CONTAINER
+.home-content .overview-boxes {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0 20px;
+    margin-bottom: 26px;
+}
+
+// BOX
+.overview-boxes .box {
+    position: relative;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 45px 15px 20px;
+    border: 1.5px solid #d2d2d2;
+    width: 290px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+// EDIT AND DELETE ICON
+.overview-boxes .box .icon-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    background-color: #ffffff;
+}
+
+/* Initially hide edit-icon */
+.overview-boxes .box .edit-icon {
+    display: none;
+}
+
+/* Initially hide delete-icon */
+.overview-boxes .box .delete-icon {
+    display: none;
+}
+
+/* Show icons on hover */
+.overview-boxes .box:hover .edit-icon,
+.overview-boxes .box:hover .delete-icon {
+    display: inline-block;
+    /* Show on hover */
+}
+
+/* New CSS for edit-div and delete-div */
+.overview-boxes .box .edit-div,
+.overview-boxes .box .delete-div {
+    display: inline-block;
+    /* Display side-by-side */
+    padding: 5px;
+    /* Some padding for better visuals */
+    background-color: transparent;
+    /* Initial background color */
+}
+
+.overview-boxes .box:hover .edit-div {
+    border-right: 0px solid #D2D2D2;
+    color: #777672;
+}
+
+.overview-boxes .box:hover .delete-div {
+    border-left: 0.5px solid #D2D2D2;
+    color: #777672;
+}
+
+/* Change background color on hover */
+.overview-boxes .box .edit-div:hover {
+    background-color: #f0f0f0;
+    /* Change color on hover */
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.overview-boxes .box .delete-div:hover {
+    background-color: #f0f0f0;
+    /* Change color on hover */
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.overview-boxes .box:hover .icon-container {
+    border: 1.5px solid #D2D2D2;
+    border-radius: 5px;
+}
+
+/* Add a border on hover for edit-icon */
+.overview-boxes .box:hover .edit-icon {
+    padding: 2px;
+    /* Add some padding to keep it square */
+}
+
+/* Add a border on hover for delete-icon */
+.overview-boxes .box:hover .delete-icon {
+    padding: 2px;
+    /* Add some padding to keep it square */
+}
+
+.overview-boxes .box-topic {
+    font-family: 'Inter-SemiBold';
+    font-size: 21px;
+    text-align: left;
+    color: #37352f;
+}
+
+.overview-boxes .box:not(:last-child) {
+    margin-right: 20px;
+    /* Or any desired value */
+}
+
+.home-content .box .number {
+    font-family: 'Inter-Light';
+    display: inline-block;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 6px;
+    font-weight: normal;
+    color: #37352f;
+}
+
+.overview-boxes .box-button {
+    font-size: 21px;
+    text-align: left;
+    color: #d2d2d2;
+}
+
+.overview-boxes .new-button:not(:last-child) {
+    margin-right: 20px;
+    /* Or any desired value */
+}
+
+/* New Styles for Interactivity */
+.overview-boxes .box:hover {
+    background-color: #f9f9f8;
+    /* Slight color change on hover */
+    // box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* Increased shadow on hover */
+}
+
+// .box:active {
+//   box-shadow: 0 3px 8px rgba(0,0,0,0.1); /* Different shadow for active state */
+//   transform: scale(0.98); /* Slightly scales down the button when clicked */
+// }
+
+.overview-boxes .box:focus {
+    outline: none;
+    /* Removes default focus styles */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+    /* Adds a blue focus ring */
+}
+
+// NEW-BUTTON
+.overview-boxes .new-button {
+    width: 290px; // specify a fixed width
+    margin-right: 20px; // add some margin to the right for spacing
+    margin-bottom: 20px; // add some margin to the right for spacing
+    display: flex;
+    align-items: center;
+    /* Center the content */
+    justify-content: center;
+    /* Center the content */
+    background: #fff;
+    padding: 15px 45px;
+    border-radius: 5px;
+    // box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    border: 1.5px solid #d2d2d2;
+    cursor: pointer;
+    /* Makes it clear it's clickable */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    /* Smooth transitions */
+}
+
+.overview-boxes .box-button {
+    font-family: 'Inter-Light';
+    font-size: 21px;
+    text-align: left;
+    color: #d2d2d2;
+}
+
+.overview-boxes .new-button:not(:last-child) {
+    margin-right: 20px;
+    /* Or any desired value */
+}
+
+.overview-boxes .new-button:hover {
+    background-color: #efefef;
+    /* Slight color change on hover */
+    // box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* Increased shadow on hover */
+}
+
+.overview-boxes .new-button:active {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    /* Different shadow for active state */
+    transform: scale(0.98);
+    /* Slightly scales down the button when clicked */
+}
+
+.overview-boxes .new-button:focus {
+    outline: none;
+    /* Removes default focus styles */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+    /* Adds a blue focus ring */
+}
+
+// NEW BUTTON BLACK
+.new {
+    float: right;
+    width: 80px; // specify a fixed width
+    margin-right: 20px; // add some margin to the right for spacing
+    display: flex;
+    align-items: center;
+    /* Center the content */
+    justify-content: center;
+    /* Center the content */
+    background: #212529;
+    padding: 5px 0px;
+    border-radius: 5px;
+    // box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    // border: 2px solid #212529;
+    cursor: pointer;
+    /* Makes it clear it's clickable */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    /* Smooth transitions */
+}
+
+.new .box-button {
+    font-family: 'Inter-Bold';
+    font-size: 15px;
+    text-align: left;
+    color: #d2d2d2;
+}
+
+.new:hover {
+    background-color: #333a41;
+    /* Slight color change on hover */
+    // box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* Increased shadow on hover */
+}
+
+.new:active {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    /* Different shadow for active state */
+    transform: scale(0.98);
+    /* Slightly scales down the button when clicked */
+}
+
+.new:focus {
+    outline: none;
+    /* Removes default focus styles */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+    /* Adds a blue focus ring */
+}
+
+/* Responsive Media Query */
+@media (max-width: 1240px) {
+    .sidebar {
+        width: 60px;
+    }
+
+    .sidebar.active {
+        width: 220px;
+    }
+
+    .home-section {
+        width: calc(100% - 90px);
+        left: 90px;
+    }
+
+    .sidebar.active~.home-section {
+        /* width: calc(100% - 220px); */
+        overflow: hidden;
+        left: 220px;
+    }
+
+    .home-section nav {
+        width: calc(100% - 60px);
+        left: 80px;
+    }
+
+    .sidebar.active~.home-section nav {
+        width: calc(100% - 220px);
+        left: 220px;
+    }
+}
+
+@media (max-width: 1150px) {
+    .home-content .sales-boxes {
+        flex-direction: column;
+    }
+
+    .home-content .sales-boxes .box {
+        width: 100%;
+        overflow-x: scroll;
+        margin-bottom: 30px;
+    }
+
+    .home-content .sales-boxes .top-sales {
+        margin: 0;
+    }
+}
+
+@media (max-width: 1000px) {}
+
+@media (max-width: 700px) {
+
+    nav .sidebar-button .dashboard,
+    nav .profile-details .admin_name,
+    nav .profile-details i {
+        display: none;
+    }
+
+    .home-section nav .profile-details {
+        height: 50px;
+        min-width: 40px;
+    }
+
+    .home-content .sales-boxes .sales-details {
+        width: 560px;
+    }
+}
+
+@media (max-width: 550px) {
+    .overview-boxes .box {
+        width: 100%;
+        margin-bottom: 15px;
+        margin-left: 15px;
+    }
+
+    .overview-boxes .new-button {
+        width: 100%;
+        margin-bottom: 15px;
+        margin-left: 15px;
+    }
+
+    .sidebar.active~.home-section nav .profile-details {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .sidebar {
+        width: 0;
+    }
+
+    .sidebar.active {
+        width: 60px;
+    }
+
+    .home-section {
+        width: 100%;
+        left: 0;
+    }
+
+    .sidebar.active~.home-section {
+        left: 60px;
+        width: calc(100% - 60px);
+    }
+
+    .home-section nav {
+        width: 100%;
+        left: 0;
+    }
+
+    .sidebar.active~.home-section nav {
+        left: 60px;
+        width: calc(100% - 60px);
+    }
+}
+
+.home-section.expanded {
+  background-color: red; /* Change this to the desired background color */
+  /* Additional styles for the expanded state */
+}
