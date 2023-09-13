@@ -11,7 +11,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit {
-  @Input() sidebarExpanded = true;
+  @Input() sidebarCompressed = false;
 
   constructor(
     private router: Router,

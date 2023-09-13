@@ -1,4 +1,246 @@
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 65%;
+    height: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .close {
+    color: #aaa;
+    text-align: left;
+    font-size: 40px;
+    margin-left: 40px;
+    margin-top: 40px;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .assigned_icon_container {
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .assigned_icon_container .assigned_icon {
+    color: #55534e;
+    font-size: 60px;
+    font-weight: bold;
+    padding: 2px;
+    text-align: center;
+  }
+
+  .assigned_icon_container :hover {
+    background-color: #efefef;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .assigned_icon_container :active {
+    background-color: #cfd2df;
+  }
+
+  .modal_container {
+    width: 100%;
+    height: 100%;
+    padding: 0 10%;
+  }
+
+  .modal_title {
+    text-align: left;
+    padding: 0px;
+    margin-bottom: 25px;
+  }
+
+  .modal_container h1{
+    font-size: 55px;
+    color: #55534e;
+    font-family: "Inter-Bold";
+  }
+
+.modal_subtitle {
+    padding: 5px;
+    font-family: 'Inter-Regular';
+    font-size: 22px;
+    text-align: left;
+    color: #9c9b98;
+    margin-right: 10px;
+}
+
+.modal_subtitle i{
+    font-size: 25px;
+}
+
+.modal_subtitle_container :hover {
+    background-color: #efefef;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .modal_subtitle_container :active {
+    background-color: #cfd2df;
+  }
+
+  .modal_subtitle_container {
+    font-family: 'Inter-Regular';
+    font-size: 22px;
+    text-align: left;
+    color: #9c9b98;
+    padding: 0px;
+}
+
+
+  .modal_amount {
+    padding: 5px;
+    font-family: 'Inter-Regular';
+    font-size: 22px;
+    text-align: left;
+    color: #37352f
+}
+
+/* Style for the fixed save button */
+.fixed-save-button {
+    text-align: right;
+}
+
+.fixed-save-button button {
+    background-color: #0c0b0b; /* Customize button styles */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.fixed-save-button button:hover {
+    background-color: #333a41; /* Customize button hover styles */
+}
+
+
+.clickable {
+    cursor: pointer;
+}
+
+/* Icon Grid with Equal Spacing */
+.icon-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 5px;
+}
+
+.icon-wrapper {
+    width: 40px;  /* fixed width */
+    height: 40px;  /* fixed height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-item {
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* Container that holds the selected icon */
+.icon-select-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-title {
+    font-family: 'Inter-Medium';
+    font-weight: normal;
+    font-size: 15px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    color: #8d8c88;
+}
+
+.selected-icon {
+    max-width: 24px;
+    max-height: 24px;
+}
+
+.placeholder-text {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Styling the icon picker */
+.icon-picker {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 25%;
+    z-index: 1000;
+    max-height: 300px; /* you can set this to any value you want */
+    overflow-y: auto; /* makes it scrollable */
+}
+
+.icon-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    padding: 5px;
+}
+
+.icon-item {
+    cursor: pointer;
+    margin: 5px;
+    font-size: 24px;
+}
+
+/* Import button */
+.icon-import {
+    margin-top: 10px;
+}
+
+.import-button {
+    cursor: pointer;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.icon-picker img {
+    cursor: pointer;
+    /* Additional styling */
+}
+
 // HOME SECTION
 
 .home-section nav {
@@ -41,6 +283,7 @@
 nav .sidebar-button i {
     font-size: 35px;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .home-section nav .profile-details {
@@ -381,6 +624,36 @@ nav .profile-details i {
     /* Adds a blue focus ring */
 }
 
+.home-section.compressed {
+    position: relative;
+    background: #ffffff;
+    min-height: 100vh;
+    width: calc(100% - 280px);
+    left: 90px;
+    transition: all 0.5s ease;
+}
+
+.home-section nav.compressed {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: calc(100% - 280px);
+    left: 90px;
+    z-index: 100;
+    padding: 0 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+}
+
+.box-topic :hover {
+    background-color: #e9e9e9;
+    border-radius: 5px;
+}
+
 /* Responsive Media Query */
 @media (max-width: 1240px) {
     .sidebar {
@@ -497,7 +770,3 @@ nav .profile-details i {
     }
 }
 
-.home-section.expanded {
-  background-color: red; /* Change this to the desired background color */
-  /* Additional styles for the expanded state */
-}
