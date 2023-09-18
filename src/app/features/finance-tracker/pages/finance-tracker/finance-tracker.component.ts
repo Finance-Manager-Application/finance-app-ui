@@ -13,9 +13,13 @@ export class FinanceTrackerComponent implements OnInit {
     this.renderer.listen('window', 'click', (event: Event) => {
       this.onClickOutsideModal(event);
     });
+    this.renderer.listen('window', 'click', (event: Event) => {
+      this.onClickOutsideModalRight(event);
+    });
   }
 
   modalOpen: boolean = false;
+  modalOpenRight: boolean = false;
 
 
   sidebarCompressed = false;
@@ -136,4 +140,42 @@ export class FinanceTrackerComponent implements OnInit {
         }
       }
     }
+
+    openModalRight() {
+      const modal = document.getElementById('myModalRight');
+      modal.style.display = 'block';
+      this.modalOpenRight = true;
+      if (this.modalOpenRight) {
+        document.body.style.overflowY = 'hidden'; // Prevent body scroll when nav is open
+      } else {
+        document.body.style.overflowY = 'auto'; // Allow body scroll when nav is closed
+      }
+    }
+    
+    closeModalRight() {
+      const modal = document.getElementById('myModalRight');
+      modal.style.display = 'none';
+      this.modalOpenRight = false;
+      if (this.modalOpenRight) {
+        document.body.style.overflowY = 'hidden'; // Prevent body scroll when nav is open
+      } else {
+        document.body.style.overflowY = 'auto'; // Allow body scroll when nav is closed
+      }
+    }
+
+    onClickOutsideModalRight(event: Event): void {
+      // Check if the modal is open
+      if(this.modalOpenRight) {
+        // Get the modal element
+        const modal = document.getElementById('myModalRight');
+  
+        // Check if the click was outside the modal
+        if(event.target == modal) {
+          // Close the modal
+          this.closeModalRight();
+        }
+      }
+    }
+    
+
 }
