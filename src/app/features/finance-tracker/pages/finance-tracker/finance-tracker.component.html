@@ -18,22 +18,12 @@
     </nav>
 
     <div class="home-content">
-        <!-- <div class="icon-select-container" (click)="openIconPicker()">
+        <!-- <div class="icon-select-container" (click)="openIconPicker($event)">
             <img *ngIf="selectedIcon" [src]="selectedIcon" alt="Selected Icon" class="selected-icon">
             <span *ngIf="!selectedIcon" class="placeholder-text">Select an Icon</span>
         </div> -->
+        
 
-        <div *ngIf="isPickerOpen" class="icon-picker" [style.left.px]="pickerLeft" [style.top.px]="pickerTop">
-            <div class="icon-title">ICONS</div>
-            <div class="icon-grid">
-                <div *ngFor="let icon of availableIcons" class="icon-wrapper">
-                    <i [ngClass]="icon" (click)="setIcon(icon)" class="icon-item"></i>
-                </div>
-            </div>
-            <!-- <div class="icon-import">
-                <input type="file" (change)="importIcon($event)" class="import-button">
-            </div> -->
-        </div>
         <div class="page-title">Finance Tracker</div>
         <div class="sub-title">Accounts</div>
         <div class="overview-boxes">
@@ -47,8 +37,7 @@
                     </div>
                 </div>
                 <div>
-                    <div class="box-topic"><i class='bx bxs-bank' style="margin-right: 5px;"
-                            (click)="toggleIconPicker($event)"></i>BPI</div>
+                    <div class="box-topic"><i class='bx bxs-bank' style="margin-right: 5px;"></i>BPI</div>
                     <div class="number">$ 40,200</div>
                 </div>
             </div>
@@ -82,8 +71,7 @@
                                     <i class='bx bx-trash delete-icon'></i>
                                 </div>
                             </div>
-                            <div class="box-topic"><i class='bx bxs-down-arrow-circle' style="margin-right: 5px;"
-                                    (click)="toggleIconPicker($event)"></i>
+                            <div class="box-topic"><i class='bx bxs-down-arrow-circle' style="margin-right: 5px;"></i>
                                 Talino Labs
                             </div>
                             <div class="number">$ 1,200</div>
@@ -107,8 +95,7 @@
                                     <i class='bx bx-trash delete-icon'></i>
                                 </div>
                             </div>
-                            <div class="box-topic"><i class='bx bxs-down-arrow-circle' style="margin-right: 5px;"
-                                    (click)="toggleIconPicker($event)"></i>
+                            <div class="box-topic"><i class='bx bxs-down-arrow-circle' style="margin-right: 5px;"></i>
                                 Talino Labs
                             </div>
                             <div class="number">$ 2,800</div>
@@ -142,15 +129,14 @@
                                     <i class='bx bx-trash delete-icon'></i>
                                 </div>
                             </div>
-                            <div class="box-topic"><i class='bx bxs-down-arrow-circle' style="margin-right: 5px;"
-                                    (click)="toggleIconPicker($event)"></i>
+                            <div class="box-topic"><i class='bx bxs-down-arrow-circle' style="margin-right: 5px;"></i>
                                 Food
                             </div>
                             <div class="number">$ 100</div>
                         </div>
                     </div>
 
-                    <div class="new-button">
+                    <div class="new-button" (click)="openModal()">
                         <div class="box-button"><i class='bx bx-plus' style="margin-right: 5px;"></i>New</div>
                     </div>
                 </div>
@@ -168,7 +154,7 @@
                                 </div>
                             </div>
                             <div class="box-topic"><i class='bx bxs-down-arrow-circle' style="margin-right: 5px;"
-                                    (click)="toggleIconPicker($event)"></i>
+                                    ></i>
                                 Food
                             </div>
                             <div class="number">$ 235</div>
@@ -183,159 +169,3 @@
         </div>
     </div>
 </section>
-
-<!-- This is your modal -->
-<div id="myModal" class="modal" tabindex="-1">
-    <div class="modal-content">
-        <div class="close" (click)="closeModal()"><i class="fa fa-angle-double-left"></i></div>
-
-        <div class="modal_container container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="assigned_icon_container">
-                        <div class="assigned_icon">
-                            <i class="fa fa-university" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Title Row -->
-            <div class="modal-content-scroll">
-                <div class="row" style="padding: 0px 25px;">
-
-                    <!-- Title Col 12 -->
-                    <div class="col-md-12 modal_title">
-                        <h1>BPI</h1>
-                    </div>
-
-                    <div class="col-md-4 modal_subtitle_container">
-                        <div class="modal_subtitle">
-                            <i class='bx bxs-down-arrow-circle' style="margin-right: 5px;"
-                                (click)="toggleIconPicker($event)"></i>
-                            Current Balance
-                        </div>
-                    </div>
-                    <div class="col-md-8 modal_subtitle_container">
-                        <div class="modal_amount">
-                            $ 2,175.00
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 modal_subtitle_container">
-                        <div class="modal_subtitle">
-                            <i class='bx bxs-down-arrow-circle' style="margin-right: 5px;"
-                                (click)="toggleIconPicker($event)"></i>
-                            Total Income
-                        </div>
-                    </div>
-                    <div class="col-md-8 modal_subtitle_container">
-                        <div class="modal_amount">
-                            $ 1,350.00
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 modal_subtitle_container">
-                        <div class="modal_subtitle">
-                            <i class='bx bxs-down-arrow-circle' style="margin-right: 5px;"
-                                (click)="toggleIconPicker($event)"></i>
-                            Total Expenses
-                        </div>
-                    </div>
-                    <div class="col-md-8 modal_subtitle_container">
-                        <div class="modal_amount">
-                            $ 175.00
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="fixed-save-button">
-                            <button>Save</button>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-</div>
-
-<div id="myModalRight" class="modal-right" tabindex="-1">
-    <div class="modal-content-right">
-        <div class="close-right" (click)="closeModalRight()"><i class="fa fa-angle-double-right"></i></div>
-
-        <div class="modal_container_right container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="assigned_icon_container_right">
-                        <div class="assigned_icon_right">
-                            <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="modal-content-scroll">
-                <div class="row" style="padding: 0px 25px;">
-
-                    <!-- Title Col 12 -->
-                    <div class="col-md-12 modal_title_right">
-                        <h1>BPI</h1>
-                    </div>
-
-                    <div class="col-md-4 modal_subtitle_container_right">
-                        <div class="modal_subtitle_right">
-                            <i class='bx bx-hash' style="margin-right: 5px;"
-                                (click)="toggleIconPicker($event)"></i>
-                            Account
-                        </div>
-                    </div>
-                    <div class="col-md-8 modal_subtitle_container_right">
-                        <div class="modal_amount_right">
-                            $ 2,175.00
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 modal_subtitle_container_right">
-                        <div class="modal_subtitle_right">
-                            <i class='bx bxs-down-arrow-circle' style="margin-right: 5px;"
-                                (click)="toggleIconPicker($event)"></i>
-                            Total Income
-                        </div>
-                    </div>
-                    <div class="col-md-8 modal_subtitle_container_right">
-                        <div class="modal_amount_right">
-                            $ 1,350.00
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 modal_subtitle_container_right">
-                        <div class="modal_subtitle_right">
-                            <i class='bx bxs-down-arrow-circle' style="margin-right: 5px;"
-                                (click)="toggleIconPicker($event)"></i>
-                            Total Expenses
-                        </div>
-                    </div>
-                    <div class="col-md-8 modal_subtitle_container_right">
-                        <div class="modal_amount_right">
-                            $ 175.00
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="fixed-save-button-right">
-                            <button>Save</button>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-
-
-    </div>
-</div>

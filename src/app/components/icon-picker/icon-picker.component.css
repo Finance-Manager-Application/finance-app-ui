@@ -1,0 +1,94 @@
+
+/* Icon Grid with Equal Spacing */
+.icon-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 5px;
+}
+
+.icon-wrapper {
+    width: 40px;  /* fixed width */
+    height: 40px;  /* fixed height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-item {
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* Container that holds the selected icon */
+.icon-select-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-title {
+    font-family: 'Inter-Medium';
+    font-weight: normal;
+    font-size: 15px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    color: #8d8c88;
+}
+
+.selected-icon {
+    max-width: 24px;
+    max-height: 24px;
+}
+
+.placeholder-text {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Styling the icon picker */
+.icon-picker {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 25%;
+    z-index: 1000;
+    max-height: 300px; /* you can set this to any value you want */
+    overflow-y: auto; /* makes it scrollable */
+}
+
+.icon-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    padding: 5px;
+}
+
+.icon-item {
+    cursor: pointer;
+    margin: 5px;
+    font-size: 24px;
+}
+
+/* Import button */
+.icon-import {
+    margin-top: 10px;
+}
+
+.import-button {
+    cursor: pointer;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.icon-picker img {
+    cursor: pointer;
+    /* Additional styling */
+}

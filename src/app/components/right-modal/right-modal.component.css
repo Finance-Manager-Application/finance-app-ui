@@ -1,0 +1,140 @@
+
+.modal-right {
+    display: block;
+    position: fixed;
+    z-index: 9999;
+    left: auto; /* Remove the left: 0; */
+    right: 0;  /* Add right: 0 to make it stick to the right side */
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .modal-content-right {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;  /* You can adjust the width to suit your needs */
+    height: 100%;
+    margin-left: auto;  /* auto will push it towards the right */
+    margin-right: 0;    /* No margin on the right */
+    border-radius: 0;
+  }
+
+  .close-right {
+    color: #aaa;
+    text-align: left;
+    font-size: 40px;
+    margin-left: 40px;
+    margin-top: 40px;
+  }
+  
+  .close-right:hover,
+  .close-right:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .modal_container_right {
+    width: 100%;
+    height: 100%;
+    padding: 0 10%;
+  }
+
+  .modal_container_right h1{
+    font-size: 55px;
+    color: #55534e;
+    font-family: "Inter-Bold";
+  }
+
+  .assigned_icon_container_right {
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .assigned_icon_container_right .assigned_icon_right {
+    color: #55534e;
+    font-size: 60px;
+    font-weight: bold;
+    padding: 2px;
+    text-align: center;
+  }
+
+  .assigned_icon_container_right :hover {
+    background-color: #efefef;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .assigned_icon_container_right :active {
+    background-color: #dfdfde;
+  }
+
+  .modal_title_right {
+    text-align: left;
+    padding: 0px;
+    margin-bottom: 25px;
+  }
+
+  .modal_subtitle_container_right :hover {
+    background-color: #efefef;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .modal_subtitle_container_right :active {
+    background-color: #dfdfde;
+  }
+
+  .modal_subtitle_container_right {
+    font-family: 'Inter-Regular';
+    font-size: 22px;
+    text-align: left;
+    color: #9c9b98;
+    padding: 0px;
+}
+
+.modal_subtitle_right {
+    padding: 5px;
+    font-family: 'Inter-Regular';
+    font-size: 22px;
+    text-align: left;
+    color: #9c9b98;
+    margin-right: 10px;
+}
+
+.modal_subtitle_right i{
+    font-size: 25px;
+}
+
+.modal_amount_right {
+    padding: 5px;
+    font-family: 'Inter-Regular';
+    font-size: 22px;
+    text-align: left;
+    color: #37352f
+}
+
+.fixed-save-button-right {
+    text-align: right;
+    margin: 40px 0;
+}
+
+.fixed-save-button-right button {
+    background-color: #0c0b0b; /* Customize button styles */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.fixed-save-button-right button:hover {
+    background-color: #333a41; /* Customize button hover styles */
+}

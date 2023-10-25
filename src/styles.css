@@ -48,3 +48,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-family: 'Inter-Thin';
     src: url('./assets/fonts/Inter-Thin.ttf') format('truetype');
 }
+
+.right-modal-class .mat-dialog-container {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/* .cdk-overlay-backdrop {
+    background-color: transparent;
+} */

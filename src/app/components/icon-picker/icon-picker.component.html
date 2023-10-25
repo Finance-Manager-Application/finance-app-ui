@@ -1,0 +1,8 @@
+<div *ngIf="isPickerOpen" class="icon-picker" [style.left.px]="pickerLeft" [style.top.px]="pickerTop">
+    <div class="icon-title">ICONS</div>
+    <div class="icon-grid">
+        <div *ngFor="let icon of availableIcons" class="icon-wrapper">
+            <i [ngClass]="icon" (click)="setIcon(icon)" class="icon-item"></i>
+        </div>
+    </div>
+</div>
