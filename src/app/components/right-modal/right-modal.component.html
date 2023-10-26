@@ -1,5 +1,5 @@
-<div class="modal-right">
-    <div class="modal-content-right">
+<div class="modal-right" (click)="onClickOutside($event)">
+    <div class="modal-content-right" (click)="$event.stopPropagation()">
         <div mat-button class="close-right" (click)="closeModalRight()"><i class="fa fa-angle-double-left"></i></div>
 
         <div class="modal_container_right container">

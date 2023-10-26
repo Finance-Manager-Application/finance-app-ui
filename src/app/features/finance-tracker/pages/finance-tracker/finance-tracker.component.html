@@ -29,7 +29,7 @@
         <div class="overview-boxes">
             <div class="box">
                 <div class="icon-container">
-                    <div class="edit-div">
+                    <div class="edit-div" (click)="openModal()">
                         <i class='bx bx-edit edit-icon'></i>
                     </div>
                     <div class="delete-div">
@@ -37,18 +37,18 @@
                     </div>
                 </div>
                 <div>
-                    <div class="box-topic"><i class='bx bxs-bank' style="margin-right: 5px;"></i>BPI</div>
+                    <div class="box-topic"><i class='bx bxs-bank' style="margin-right: 5px;" (click)="toggleIconPicker($event)"></i>BPI</div>
                     <div class="number">$ 40,200</div>
                 </div>
             </div>
 
-            <div class="new-button">
+            <div class="new-button" (click)="openModal()">
                 <div class="box-button"><i class='bx bx-plus' style="margin-right: 5px;"></i>New</div>
             </div>
 
         </div>
         <div class="sub-title">Income
-            <div class="new">
+            <div class="new" (click)="openModalRight()">
                 <div class="box-button"><i class='bx bx-plus' style="margin-right: 5px;"></i>New</div>
             </div>
         </div>
@@ -64,7 +64,7 @@
                     <div class="box">
                         <div>
                             <div class="icon-container">
-                                <div class="edit-div">
+                                <div class="edit-div" (click)="openModalRight()">
                                     <i class='bx bx-edit edit-icon'></i>
                                 </div>
                                 <div class="delete-div">
@@ -78,7 +78,7 @@
                         </div>
                     </div>
 
-                    <div class="new-button">
+                    <div class="new-button" (click)="openModalRight()">
                         <div class="box-button"><i class='bx bx-plus' style="margin-right: 5px;"></i>New</div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                     <div class="box">
                         <div>
                             <div class="icon-container">
-                                <div class="edit-div">
+                                <div class="edit-div" (click)="openModalRight()">
                                     <i class='bx bx-edit edit-icon'></i>
                                 </div>
                                 <div class="delete-div">
@@ -102,7 +102,7 @@
                         </div>
                     </div>
 
-                    <div class="new-button">
+                    <div class="new-button" (click)="openModalRight()">
                         <div class="box-button"><i class='bx bx-plus' style="margin-right: 5px;"></i>New</div>
                     </div>
                 </div>
@@ -122,7 +122,7 @@
                     <div class="box">
                         <div>
                             <div class="icon-container">
-                                <div class="edit-div">
+                                <div class="edit-div" (click)="openModalRight()">
                                     <i class='bx bx-edit edit-icon'></i>
                                 </div>
                                 <div class="delete-div">
@@ -136,7 +136,7 @@
                         </div>
                     </div>
 
-                    <div class="new-button" (click)="openModal()">
+                    <div class="new-button" (click)="openModalRight()">
                         <div class="box-button"><i class='bx bx-plus' style="margin-right: 5px;"></i>New</div>
                     </div>
                 </div>
@@ -146,7 +146,7 @@
                     <div class="box">
                         <div>
                             <div class="icon-container">
-                                <div class="edit-div">
+                                <div class="edit-div" (click)="openModalRight()">
                                     <i class='bx bx-edit edit-icon'></i>
                                 </div>
                                 <div class="delete-div">
@@ -161,7 +161,7 @@
                         </div>
                     </div>
 
-                    <div class="new-button" (click)="openModal()">
+                    <div class="new-button" (click)="openModalRight()">
                         <div class="box-button"><i class='bx bx-plus' style="margin-right: 5px;"></i>New</div>
                     </div>
                 </div>

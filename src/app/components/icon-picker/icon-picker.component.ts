@@ -25,10 +25,9 @@ export class IconPickerComponent implements OnInit {
   ];
 
   openIconPicker(event: MouseEvent) {
-
-    this.pickerLeft = event.clientX - 250;
-    this.pickerTop = event.clientY + 50;
-
+    this.pickerLeft = event.clientX;
+    this.pickerTop = event.clientY;
+  
     this.isPickerOpen = !this.isPickerOpen;
   }
 
@@ -37,31 +36,20 @@ export class IconPickerComponent implements OnInit {
       this.isPickerOpen = false;
   }
 
-  // importIcon(event: any) {
-  //     const file: File = event.target.files[0];
-
-  //     if (file) {
-  //         const reader = new FileReader();
-  //         reader.onload = (e: any) => {
-  //             this.selectedIcon = e.target.result;
-  //         };
-  //         reader.readAsDataURL(file);
-  //     }
-  //     this.isPickerOpen = false;
-  // }
 
   toggleIconPicker(event: MouseEvent) {
-    event.stopPropagation(); // Prevent the click event from propagating
+    console.log("toggleIconPicker called"); // Debugging line
+    event.stopPropagation();
     this.openIconPicker(event);
-  }
+}
   
-  @HostListener('document:click', ['$event'])
-  onClickOutside(event: MouseEvent) {
-    // Check if the click occurred outside the icon picker
-    const iconPicker = document.querySelector('.icon-picker');
-    if (iconPicker && !iconPicker.contains(event.target as Node)) {
-      this.isPickerOpen = false;
-    }
-  }
+  // @HostListener('document:click', ['$event'])
+  // onClickOutside(event: MouseEvent) {
+  //   // Check if the click occurred outside the icon picker
+  //   const iconPicker = document.querySelector('.icon-picker');
+  //   if (iconPicker && !iconPicker.contains(event.target as Node)) {
+  //     this.isPickerOpen = false;
+  //   }
+  // }
 
 }

@@ -16,6 +16,13 @@ export class RightModalComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  onClickOutside(event: MouseEvent): void {
+    const modalContent = event.target as HTMLElement;
+    if (modalContent.classList.contains('modal-right')) {
+      this.closeModalRight();
+    }
+  }
+
   ngOnInit(): void {
   }
 

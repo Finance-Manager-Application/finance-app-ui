@@ -251,12 +251,42 @@ nav .profile-details i {
 
 .home-content .box .number {
     font-family: 'Inter-Light';
-    display: inline-block;
-    text-align: center;
+    display: block;
+    text-align: left;
     font-size: 18px;
     margin-top: 6px;
     font-weight: normal;
     color: #37352f;
+}
+
+/* For the container of the percentage and progress bar */
+.progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: start; /* Ensures that items start at the beginning of the container */
+    gap: 10px; /* Space between the percentage and progress bar */
+    margin-top: 6px;
+    width: 100%;
+}
+
+/* For the percentage */
+.home-content .box .percent {
+    font-family: 'Inter-Light';
+    display: inline-block; /* Instead of block, so it aligns beside the progress bar */
+    text-align: center;
+    font-size: 18px;
+    font-weight: normal;
+    color: #37352f;
+    white-space: nowrap; /* Keeps the percentage from breaking to a new line */
+}
+
+/* For the progress bar */
+.overview-boxes .box .progress-bar {
+    background-color: #d2d2d2;
+    height: 10px;
+    border-radius: 5px;
+    transition: width 0.3s ease-in-out;
+    flex-grow: 1; /* Allows it to take up remaining space */
 }
 
 .overview-boxes .box-button {
