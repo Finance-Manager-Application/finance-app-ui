@@ -16,6 +16,7 @@ export class AuthService {
       .pipe(
         tap(response => {
           this.storeToken(response.data.token);
+          localStorage.setItem('userId', response.data.user.id);
         })
       );
   }  

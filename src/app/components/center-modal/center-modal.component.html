@@ -1,78 +1,74 @@
-<!-- This is your modal -->
-
-    <div class="modal-content">
-        <div mat-button class="close" (click)="closeModal()"><i class="fa fa-angle-double-left"></i></div>
-
-        <div class="modal_container container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="assigned_icon_container">
-                        <div class="assigned_icon">
-                            <i class="fa fa-university" aria-hidden="true"></i>
-                        </div>
+<div class="modal-content">
+    <div mat-button class="close" (click)="closeModal()"><i class="fa fa-angle-double-left"></i></div>
+    <div class="modal_container container">
+        <div class="loading-container">
+            <div *ngIf="isLoading" class="loading-spinner"></div>
+        </div>
+        <div class="message-container">
+            <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+            <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+        </div>
+        <div class="row" [hidden]="isSaveClicked">
+            <div class="col-md-12">
+                <div class="assigned_icon_container">
+                    <div class="assigned_icon">
+                        <i class="fa fa-university" aria-hidden="true"></i>
                     </div>
                 </div>
             </div>
-
-            <!-- Title Row -->
+        </div>
+        <form [formGroup]="accountForm" [hidden]="isSaveClicked">
             <div class="modal-content-scroll">
                 <div class="row" style="padding: 0px 25px;">
-
-                    <!-- Title Col 12 -->
-                    <div class="col-md-12 modal_title">
-                        <h1>BPI</h1>
-                    </div>
-
-                    <div class="col-md-4 modal_subtitle_container">
-                        <div class="modal_subtitle">
-                            <i class='bx bxs-down-arrow-circle' style="margin-right: 5px;"
-                                ></i>
-                            Current Balance
+                    <div class="form-group  col-md-12">
+                        <div class="col-md-6">
+                            <input type="text" id="account_name" formControlName="account_name"
+                                class="form-control account_name no-border modal_title" placeholder="Account Name"
+                                (blur)="markFieldAsTouched('account_name')" required>
+                        </div>
+                        <div class="col-md-6">
+                            <span
+                                *ngIf="isFieldTouched('account_name') && accountForm.get('account_name').hasError('required')"
+                                class="error-message">
+                                <i class='bx bxs-error-circle'></i>
+                                Account Name is required.</span>
                         </div>
                     </div>
-                    <div class="col-md-8 modal_subtitle_container">
-                        <div class="modal_amount">
-                            $ 2,175.00
+                    <div class="form-group  col-md-12 mt-5">
+                        <div class="col-md-3 modal_subtitle_container">
+                            <div class="modal_subtitle">
+                                <i class='bx bxs-down-arrow-circle' style="margin-right: 5px;"></i>
+                                Current Balance
+                            </div>
+                        </div>
+                        <div class="col-md-3 modal_subtitle_container">
+                            <div class="form-group input-with-symbol">
+                                <span class="input-symbol">₱</span>
+                                <input type="text" id="current_balance" formControlName="current_balance"
+                                    class="form-control no-border current_balance modal_amount" required
+                                    (blur)="markFieldAsTouched('current_balance')">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <span
+                                *ngIf="isFieldTouched('current_balance') && accountForm.get('current_balance').hasError('required')"
+                                class="error-message">
+                                <i class='bx bxs-error-circle'></i>
+                                Current Balance is required.</span>
+                            <span *ngIf="accountForm.get('current_balance').hasError('pattern')" class="error-message">
+                                <i class='bx bxs-error-circle'></i>
+                                Invalid value for Current Balance.
+                            </span>
                         </div>
                     </div>
-
-                    <div class="col-md-4 modal_subtitle_container">
-                        <div class="modal_subtitle">
-                            <i class='bx bxs-down-arrow-circle' style="margin-right: 5px;"
-                                ></i>
-                            Total Income
-                        </div>
-                    </div>
-                    <div class="col-md-8 modal_subtitle_container">
-                        <div class="modal_amount">
-                            $ 1,350.00
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 modal_subtitle_container">
-                        <div class="modal_subtitle">
-                            <i class='bx bxs-down-arrow-circle' style="margin-right: 5px;"
-                                ></i>
-                            Total Expenses
-                        </div>
-                    </div>
-                    <div class="col-md-8 modal_subtitle_container">
-                        <div class="modal_amount">
-                            $ 175.00
-                        </div>
-                    </div>
-                    <div class="col-md-12">
+                    <div class="col-md-9">
                         <div class="fixed-save-button">
-                            <button>Save</button>
+                            <button (click)="addAccount()"
+                                [disabled]="accountForm.invalid">Save</button>
                         </div>
                     </div>
-
                 </div>
-
             </div>
-
-
-        </div>
-
-
+        </form>
     </div>
+</div>

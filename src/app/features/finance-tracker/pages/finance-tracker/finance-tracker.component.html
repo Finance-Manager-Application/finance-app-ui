@@ -27,24 +27,29 @@
         <div class="page-title">Finance Tracker</div>
         <div class="sub-title">Accounts</div>
         <div class="overview-boxes">
-            <div class="box">
-                <div class="icon-container">
-                    <div class="edit-div" (click)="openModal()">
-                        <i class='bx bx-edit edit-icon'></i>
+            <ng-container *ngFor="let account of accounts; let i = index">
+                <div class="box" [ngClass]="{'first-box': i % 3 === 0}">
+                  <div class="icon-container">
+                    <div class="edit-div" (click)="openModal(account.account_id)">
+                      <i class='bx bx-edit edit-icon'></i>
                     </div>
                     <div class="delete-div">
-                        <i class='bx bx-trash delete-icon'></i>
+                      <i class='bx bx-trash delete-icon'></i>
                     </div>
+                  </div>
+                  <div>
+                    <div class="box-topic">
+                      <i class='bx bxs-bank' style="margin-right: 5px;"></i>{{ account.name }}
+                    </div>
+                    <div class="number">Php {{ account.current_balance | number:'1.2-2' }}</div>
                 </div>
-                <div>
-                    <div class="box-topic"><i class='bx bxs-bank' style="margin-right: 5px;" (click)="toggleIconPicker($event)"></i>BPI</div>
-                    <div class="number">$ 40,200</div>
                 </div>
-            </div>
-
-            <div class="new-button" (click)="openModal()">
+                <div class="clearfix" *ngIf="(i + 1) % 3 === 0"></div>
+              </ng-container>
+            
+              <div class="box new-box" (click)="openModal()">
                 <div class="box-button"><i class='bx bx-plus' style="margin-right: 5px;"></i>New</div>
-            </div>
+              </div>
 
         </div>
         <div class="sub-title">Income

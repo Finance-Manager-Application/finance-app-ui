@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { LogoutComponent } from './logout/logout.component';
@@ -18,7 +19,9 @@ import { IconPickerComponent } from './icon-picker/icon-picker.component';
   ],
   imports: [
     CommonModule,
-    MatDialogModule
+    FormsModule,
+    MatDialogModule,
+    ReactiveFormsModule,
   ],
   exports: [SidenavComponent],
 })
